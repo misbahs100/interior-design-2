@@ -1,11 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const swiperImages = [
-  "https://images.othoba.com/images/thumbs/0716146_noodles top slider web.jpeg",
-  "https://img.freepik.com/free-vector/flat-horizontal-banner-template-black-friday-sale_23-2150852978.jpg?semt=ais_hybrid",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1HEnm-wuwgmv2kx3KLgdhplRovzaz8-jdNQ&s",
-];
+const swiperImages = ["/images/features/features-03.png"];
 
 export function Carousel({imageUrlsArray}) {
   const [currentSlide, setCurrentSlide] = useState(0);

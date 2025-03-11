@@ -1,9 +1,7 @@
-import Link from "next/link";
 import { SingleProject } from "./SingleProject";
 
 
 export default async function ProjectsGridClient({projects}) {
-    console.log(projects)
     function cleanString(str) {
         // Remove special characters
         str = str.replace(/[^\w\s]/gi, '');
@@ -19,7 +17,6 @@ export default async function ProjectsGridClient({projects}) {
         };
     });
 
-    console.log(projectsClone);
     
 
     

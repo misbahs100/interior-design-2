@@ -5,10 +5,10 @@ import { Carousel } from "@/app/(site)/ui/projects/carousel";
 
 export default async function Page(props) {
   const params = await props.params;
-  console.log(params.id);
   const id = params.id;
   const project = await fetchSingleProject(id);
   const imageUrlsArray = project.project_image.split(',');
+  const imageSrc = imageUrlsArray[0];
 
   return (
     <>
@@ -32,9 +32,11 @@ export default async function Page(props) {
                 alt="Featured image"
                 className="mb-8 h-auto w-full"
               /> */}
-              <div className="my-5">
-              <Carousel imageUrlsArray={imageUrlsArray} />
-              </div>
+              { imageSrc &&
+                <div className="my-5">
+                <Carousel imageUrlsArray={imageUrlsArray} />
+                </div>
+              }
 
               <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto">
                 <p className="text-justify">{project.details}</p>
