@@ -1,8 +1,11 @@
 import { Suspense } from "react";
 import ProjectsGrid from "../ui/projects/projectsGrid";
 import { ProjectsGridSkeleton } from "../ui/skeletons/skeletons";
+import { fetchProducts } from "../lib/data";
+import ProjectsGridClient from "../ui/projects/ProjectsGridClient";
 
 const Page = async () => {
+  const projects = await fetchProducts();
   return (
     <section className="py-20 lg:py-25 xl:py-30">
       <div className="mx-auto mt-15 max-w-c-1280 px-4 md:px-8 xl:mt-20 xl:px-0">
@@ -14,9 +17,10 @@ const Page = async () => {
             <p className="mb-12 text-gray-600">
               We are in extremely love with eco-friendly systems.
             </p>
-            <Suspense fallback={<ProjectsGridSkeleton />}>
+            {/* <Suspense fallback={<ProjectsGridSkeleton />}>
               <ProjectsGrid />
-            </Suspense>
+            </Suspense> */}
+            <ProjectsGridClient projects={projects} />
             {/* <div className="mt-5 flex w-full justify-center">
         <Pagination totalPages={totalPages} />
       </div> */}
