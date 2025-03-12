@@ -2,7 +2,7 @@ import { sql } from "@vercel/postgres";
 
 const ITEMS_PER_PAGE = 6;
 
-export async function fetchProducts() {
+export async function fetchProjects() {
   try {
     
     const projects = await sql`
