@@ -32,10 +32,6 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    appDir: true, // Ensures the App Router works properly if used
-    serverActions: true, // Enables server actions
-  },
   async headers() {
     return [
       {
