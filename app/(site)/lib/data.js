@@ -4,6 +4,8 @@ const ITEMS_PER_PAGE = 6;
 
 export async function fetchProducts() {
   try {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    
     const projects = await sql`
         SELECT *
         FROM projects
