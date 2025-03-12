@@ -1,7 +1,9 @@
+import { fetchProducts } from "../../lib/data";
 import { SingleProject } from "./SingleProject";
 
 
-export default async function ProjectsGridClient({projects}) {
+export default async function ProjectsGridClient() {
+  const projects = await fetchProducts();
     function cleanString(str) {
         // Remove special characters
         str = str.replace(/[^\w\s]/gi, '');
